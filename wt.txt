@@ -1,0 +1,53 @@
+28:cd:c4:f4:de:b9
+
+https://docs.python.org/3/library/subprocess.html
+
+so to change mac address we need to execute linux terminal commands in python language.
+FOR THAT WE WILL BE USING : subprocess
+subprocess.call("ifconfig tun0 down", shell=True)
+
+FOR variable in the command : 
+simply declared the variable and append using + ""
+
+
+FOR TAKING INPUT FROM USER :
+interface = raw_input("Interface >") 2
+interface = input("Interface >") 3
+
+
+
+FOR SECURE CODING :
+as the program is not implemented properly so we have to handle input properly so no one can execute system command through our script.
+make a list :
+subprocess.call(["ifconfig", interface, "down"])
+
+
+
+FOR ARGUMENTS IN COMMAND :
+https://docs.python.org/2/library/optparse.html
+python script.py  --option {..} --option {..} --option {..} --help
+import optparse
+parser.parse_args()
+
+
+
+For reading output
+https://docs.python.org/2/library/subprocess.html
+subprocess.check_output(
+
+
+Functions : 
+https://www.tutorialspoint.com/python/python_functions.htm
+
+Decision: 
+https://www.tutorialspoint.com/python/python_decision_making.htm
+
+
+For matching expression:
+https://pythex.org/
+https://docs.python.org/2/library/re.html
+\w\w:\w\w:\w\w:\w\w:\w\w:\w\w
+
+ifconfig wlan0 down
+ifconfig wlan0 hw ether 28:cd:c4:f4:de:b1
+ifconfig wlan0 up 
