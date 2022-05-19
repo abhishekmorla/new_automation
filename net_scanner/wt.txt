@@ -1,0 +1,4 @@
+https://scapy.readthedocs.io/en/latest/
+
+for sending and reciving packets
+https://scapy.readthedocs.io/en/latest/usage.html#send-and-receive-packets-sr
